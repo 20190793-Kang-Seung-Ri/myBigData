@@ -6,7 +6,7 @@ import seaborn as sns
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("gapminder.tsv", sep="\t")
+    df = pd.read_csv("gapminder.tsv", sep="\t") # dataframe
     return df
 
 def plot_matplotlib(): # streamlit 문법
@@ -32,7 +32,7 @@ def main():
     st.dataframe(df, use_container_width=True) # 대시보드에 표 삽입 
 
     #pandas style -> 두번째 표
-    st.tite("Maximum value per column")
+    st.title("Maximum value per column")
     st.dataframe(df.iloc[:5,2:].style.highlight_max(axis=0))
 
     plot_matplotlib() # 그래프 삽입 
