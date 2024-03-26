@@ -29,12 +29,12 @@ def main():
     st.checkbox("Use container width", value=False, key = 'use_container_width')
     
     df = load_data()
-    st.dataframe(df, use_container_width=True)
+    st.dataframe(df, use_container_width=True) # 대시보드에 표 삽입 
 
-    #pandas style
+    #pandas style -> 두번째 표
     st.dataframe(df.iloc[:5,2:].style.highlight_max(axis=0))
 
-    plot_matplotlib()
+    plot_matplotlib() # 그래프 삽입 
     
     
 if __name__ == "__main__":
